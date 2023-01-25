@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { ShareModule } from './share/share.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    ShareModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
