@@ -1,0 +1,14 @@
+<div class="header">
+  <div class="logo">
+    <h2>eatable</h2>
+    <span>food for Everyone</span>
+  </div>
+  <nav>
+    <ul>
+      <li [ngClass]="{'select':login}"><a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+      </li>
+      <li [ngClass]="{'select':login==false}"><a [routerLink]="['/register']"
+          routerLinkActive="router-link-active">SignUp</a></li>
+    </ul>
+  </nav>
+</div>
