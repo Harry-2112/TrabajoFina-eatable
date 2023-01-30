@@ -1,0 +1,59 @@
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #FA4A0C;
+  font-weight: 800;
+}
+
+.data {
+  width: 100%;
+  background: #fff;
+  border-radius: 25px;
+}
+
+.circle {
+  background: #FA4A0C;
+  color: #fff;
+  border-radius: 25px;
+}
+
+.history {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  border-radius: 25px;
+}
+
+.text-history {
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.centrar {
+  display: grid;
+  place-content: center;
+}
+
+.data span {
+  color: rgba(0, 0, 0, .5);
+}
+
+.salir {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-danger {
+  width: 70%;
+  height: 50px;
+  border-radius: 25px;
+  background: #FA4A0C;
+}

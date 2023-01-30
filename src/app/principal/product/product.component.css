@@ -1,0 +1,32 @@
+.card {
+  background: none;
+  border: none;
+  align-items: center;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.text-center {
+  font-weight: 700;
+}
+
+.price {
+  color: #FA4A0C;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  border: #FA4A0C;
+  background: #FA4A0C;
+  border-radius: 25px;
+  width: 70%;
+  height: 50px;
+}

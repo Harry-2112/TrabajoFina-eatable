@@ -1,0 +1,37 @@
+<div class="cabecera px-4">
+  <h4>Personal details</h4>
+  <a [routerLink]="['/principal/profile/update']">Change</a>
+</div>
+<div class="data py-4 px-5">
+  <div class="name">
+    <h3 *ngIf="userData.name=='' || userData.name==undefined"><b>Actualizar Nombre</b></h3>
+    <h3 *ngIf="userData.name!==''"><b>{{userData.name}}</b></h3>
+  </div>
+  <div class="email">
+    <span *ngIf="userData.email=='' || userData.email==undefined">Actualizar Correo</span>
+    <span *ngIf="userData.email!==''">{{userData.email}}</span>
+  </div>
+  <hr>
+  <div class="phone">
+    <span *ngIf="userData.phone=='' || userData.phone==undefined">Actualizar Telefono</span>
+    <span *ngIf="userData.phone!==''">{{userData.phone}}</span>
+  </div>
+  <hr>
+  <div class="location">
+    <span *ngIf="userData.address=='' || userData.address==undefined">Actualizar Ubicacion</span>
+    <span *ngIf="userData.address!==''">{{userData.address}}</span>
+  </div>
+</div>
+<div class="py-3 mt-4 history">
+  <div class="centrar">
+    <b class="text-history">History</b>
+  </div>
+  <div>
+    <button class="btn circle" [routerLink]="['/principal/history']"><i class="fa fa-angle-right"
+        aria-hidden="true"></i></button>
+  </div>
+</div>
+
+<div class="salir mt-5">
+  <button class="btn btn-danger mt-5" (click)="logoup()">Logoup</button>
+</div>

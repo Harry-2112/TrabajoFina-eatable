@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="header pt-4">
+    <div class="buscador">
+      <form (input)="search(data.value)">
+        <div class="input-group">
+          <span class="input-group-text bg-transparent"><i class="fa fa-search" aria-hidden="true"></i></span>
+          <input type="text" class="form-control bg-transparent" placeholder="Search" #data>
+        </div>
+      </form>
+    </div>
+    <div class="carrito">
+      <a [routerLink]="['/principal/card']">
+        <span class="text-muted">{{numeroCarrito}}</span>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <div class="mt-2 scroller">
+    <div class="slide px-3" [ngClass]="{'borde':borde=='all'}">
+      <button class="btn" (click)="All()">All</button>
+    </div>
+    <div class="slide px-3" *ngFor="let item of categoris" [ngClass]="{'borde':borde==item}">
+      <button class="btn" (click)="filtrar(item)">{{item}}</button>
+    </div>
+  </div>
+
+  <div class="scrollarea" *ngIf="datosR==''">
+    <div class="comidas">
+      <div class="card" *ngFor="let item of products">
+        <div (click)="detalle(item._id)">
+          <img src="{{item.picture_url}}" class="card-img-top">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.price | currency:'USD'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scrollarea" *ngIf="productosFiltrados!=='' && datosR!=='' && contador!==0">
+    <h1 class="text-center">Found {{contador}} results</h1>
+    <div class="comidas">
+      <div class="card" *ngFor="let item of productosFiltrados">
+        <div (click)="detalle(item._id)">
+          <img src="{{item.picture_url}}" class="card-img-top">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.price | currency:'USD'}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scrollarea" *ngIf="datosR!=='' && contador==0">
+    <div class="vacio">
+      <div class="icono">
+        <i class="fa fa-search text-muted" aria-hidden="true"></i>
+      </div>
+      <div class="texto mt-5">
+        <span class="text-muted">No products found</span>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,57 @@
+<div class="container pt-4" *ngIf="pedido.length>0">
+  <a [routerLink]="['/principal']" class="text-muted"><i class="fa fa-angle-left fs-2" aria-hidden="true"></i></a>
+  <div class="principal">
+    <h2 class="text-center">Cart</h2>
+    <!-- Aqui van las compras -->
+    <div class="main">
+      <div class="card my-4" *ngFor="let item of pedido">
+        <div class="img">
+          <img src="{{item.picture_url}}">
+        </div>
+        <div class="info">
+          <h2>{{item.name}}</h2>
+          <span>{{item.total | currency:'USD'}}</span>
+        </div>
+        <div class="space-contador">
+          <div class="contador">
+            <div class="menos"><button class="btn" (click)="menos(item.id)"><i class="fa fa-minus"
+                  aria-hidden="true"></i></button>
+            </div>
+            <div class="cantidad">{{item.quantity}}</div>
+            <div class="mas"><button class="btn" (click)="mas(item.id)"><i class="fa fa-plus"
+                  aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="final">
+      <div class="total">
+        <span>total</span>
+        <h2>{{total | currency:'USD'}}</h2>
+      </div>
+      <div class="button">
+        <button class="btn check btn-success" (click)="check()">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- vacio -->
+<div class="container pt-4" *ngIf="pedido.length==0">
+  <a [routerLink]="['/principal']" class="text-muted"><i class="fa fa-angle-left fs-2" aria-hidden="true"></i></a>
+  <div class="principal">
+    <h2 class="text-center">Cart</h2>
+    <div class="content">
+      <div class="vacio">
+        <div class="icono">
+          <i class="fa fa-shopping-cart text-muted" aria-hidden="true"></i>
+        </div>
+        <div class="texto mt-5">
+          <span class="text-muted">No items in the cart</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="px-4 delivery">
+  <h1>Delivery</h1>
+</div>
+<div class="cabecera px-4">
+  <h4>Address details</h4>
+  <a [routerLink]="['/principal/checkout/checkoutUpdate']">Change</a>
+</div>
+<div class="data py-4 px-5">
+  <div class="name">
+    <h3 *ngIf="userData.name=='' || userData.name==undefined"><b>Actualizar Nombre</b></h3>
+    <h3 *ngIf="userData.name!==''"><b>{{userData.name}}</b></h3>
+  </div>
+  <hr>
+  <div class="location">
+    <span *ngIf="userData.delivery_address=='' || userData.delivery_address==undefined">Actualizar Ubicacion</span>
+    <span *ngIf="userData.delivery_address!==''">{{userData.delivery_address}}</span>
+  </div>
+  <hr>
+  <div class="phone">
+    <span *ngIf="userData.phone=='' || userData.phone==undefined">Actualizar Telefono</span>
+    <span *ngIf="userData.phone!==''">{{userData.phone}}</span>
+  </div>
+</div>
+<div class="total mx-3">
+  <div class="">
+    <span>Total</span>
+  </div>
+  <div class="">
+    <h2>{{userData.total | currency}}</h2>
+  </div>
+</div>
+<div class="completar">
+  <button class="btn btn-danger" (click)="completar()">Complete Order</button>
+</div>

@@ -1,0 +1,17 @@
+<div class="container bg-light">
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="menu">
+    <ul class="nav fs-1">
+      <li><a [routerLink]="['/principal/home']"><i class="fas fa-home"
+            [ngClass]="{'orange':color=='home' || color==''}"></i></a>
+      </li>
+      <li><a [routerLink]="['/principal/profile']"><i class="fas fa-user"
+            [ngClass]="{'orange':color=='profile'}"></i></a></li>
+      <li><a [routerLink]="['/principal/history']"><i class="fas fa-history"
+            [ngClass]="{'orange':color=='history'}"></i></a></li>
+    </ul>
+  </div>
+
+</div>

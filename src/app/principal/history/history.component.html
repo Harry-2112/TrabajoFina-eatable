@@ -1,0 +1,55 @@
+<div class="container pt-4">
+  <div class="header">
+    <a [routerLink]="['/principal']" class="text-muted"><i class="fa fa-angle-left fs-2" aria-hidden="true"></i></a>
+    <h2 class="text-center">History</h2>
+  </div>
+  <div class="principal" *ngIf="userHistory.length==0">
+    <div class="content">
+      <div class="vacio">
+        <div class="icono">
+          <i class="fa fa-calendar-minus text-muted" aria-hidden="true"></i>
+        </div>
+        <div class="texto mt-5">
+          <span class="text-muted">No history yet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="principal">
+    <div class="card mt-4 px-4 pt-4" *ngFor="let item of userHistory">
+      <div class="date">
+        <div class="fecha">
+          {{item.data | date:'EEE, MMM d, y'}}
+        </div>
+        <div class="cantidad">
+          {{item.items.length}} items
+        </div>
+      </div>
+      <div class="total">
+        {{item.total | currency}}
+      </div>
+      <div class="aparecer" *ngIf="ocultar">
+        <div class="orden">
+          <h2>Order</h2>
+          <ul>
+            <li *ngFor="let product of item.items">{{product.quantity}} - {{product.name}} <span>{{product.price |
+                currency}}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="delivery">
+          <h2>Delivery</h2>
+          {{item.delivery_address}}
+        </div>
+      </div>
+      <div class="buton">
+        <button class="btn" (click)="mostrar()" *ngIf="ocultar==false"><i class="fa fa-angle-down"
+            aria-hidden="true"></i></button>
+        <button class="btn" (click)="mostrar()" *ngIf="ocultar"><i class="fa fa-angle-up"
+            aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+
+</div>

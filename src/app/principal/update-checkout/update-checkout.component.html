@@ -1,0 +1,21 @@
+<h3><b>Update delivery details</b></h3>
+<div class="content pb-5">
+  <form class="form" (submit)="submit(phone.value,address.value)">
+    <div class="form__group my-3 mt-5">
+      <input type="text" placeholder=" " class="form__input" value="{{userData.name}}" id="name" #name disabled>
+    </div>
+    <div class="form__group my-3">
+      <input type="text" placeholder=" " class="form__input" value="{{userData.phone}}" id="phone" #phone>
+      <label for="phone" class="form__label">Phone:</label>
+    </div>
+    <div class="form__group my-3">
+      <input type="text" placeholder=" " class="form__input" value="{{userData.delivery_address}}" id="address"
+        #address>
+      <label for="address" class="form__label">Address:</label>
+    </div>
+
+    <div class="button">
+      <button class="btn mt-5 w-100" type="submit">Update</button>
+    </div>
+  </form>
+</div>
