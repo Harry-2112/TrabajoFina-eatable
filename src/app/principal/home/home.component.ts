@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
       carrito = JSON.parse(carrito);
     }
     carrito !== null ? (this.numeroCarrito = carrito.length) : null;
-    console.log(this.numeroCarrito);
     this.borde = 'all';
     this.productSvc.getProducts().subscribe((data) => {
       this.products = data;

@@ -39,15 +39,14 @@ export class CheckoutDatesComponent implements OnInit {
           'Su pedido se completo correctamente',
           'Felicidades!'
         );
-        console.log(data);
+        localStorage.setItem('pedido', '[]');
+        localStorage.setItem('carrito', '[]');
+        localStorage.setItem('reload', 'false');
+        this.router.navigate(['principal/history']);
       },
       (error) => {
         console.log(error);
       }
     );
-    localStorage.setItem('pedido', '[]');
-    localStorage.setItem('carrito', '[]');
-    localStorage.setItem('reload', 'false');
-    this.router.navigate(['principal/history']);
   }
 }

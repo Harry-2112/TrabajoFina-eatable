@@ -24,7 +24,6 @@ export class HistoryComponent implements OnInit {
           this.userHistory.push(e);
         }
       });
-      console.log(this.userHistory);
     });
   }
   mostrar() {

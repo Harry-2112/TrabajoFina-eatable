@@ -12,7 +12,6 @@ export class UpdateCheckoutComponent implements OnInit {
   constructor(private tostr: ToastrService, private router: Router) {}
   ngOnInit(): void {
     this.userData !== null ? (this.userData = JSON.parse(this.userData)) : null;
-    console.log(this.userData);
   }
   submit(phone: string, delivery_address: string) {
     if (

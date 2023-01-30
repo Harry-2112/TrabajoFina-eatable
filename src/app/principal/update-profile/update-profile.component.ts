@@ -44,7 +44,6 @@ export class UpdateProfileComponent implements OnInit {
           'Usuario Actualizado Correctamente',
           'Felicidades!'
         );
-        console.log(data);
         this.router.navigate(['/principal/profile']);
       },
       (err) => {

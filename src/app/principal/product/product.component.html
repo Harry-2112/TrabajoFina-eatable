@@ -1,13 +1,13 @@
 <div class="container pt-4">
   <a [routerLink]="['/principal']" class="text-muted"><i class="fa fa-angle-left fs-2" aria-hidden="true"></i></a>
   <div class="card">
-    <img src="{{productData.picture_url}}" class="card-img-top">
+    <img src="{{productData?.picture_url}}" class="card-img-top">
     <div class="card-body">
-      <h1 class="card-title text-center">{{productData.name | titlecase}}</h1>
-      <h2 class="text-center price">{{productData.price | currency:'USD'}}</h2>
+      <h1 class="card-title text-center">{{productData?.name | titlecase}}</h1>
+      <h2 class="text-center price">{{productData?.price | currency:'USD'}}</h2>
       <div class="descriccion">
         <h4>Description</h4>
-        <p class="card-text">{{productData.description}}</p>
+        <p class="card-text">{{productData?.description}}</p>
       </div>
     </div>
   </div>

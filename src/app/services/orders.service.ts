@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class OrdersService {
   constructor(private http: HttpClient) {}
   url = 'http://localhost:8000/api/orders';
-  urlProducion = 'https://api-eatable-production.up.railway.app/api/orders';
+  urlProducion = 'https://api-eatable-production.up.railway.app/api/orders/';
   get() {
     return this.http.get(this.urlProducion);
   }

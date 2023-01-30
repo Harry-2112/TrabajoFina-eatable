@@ -19,7 +19,6 @@ export class CardComponent implements OnInit {
   phone = '';
   ngOnInit(): void {
     this.usuarioSvc.getProfile().subscribe((data: any) => {
-      console.log(data);
       this.delivery_address = data.address;
       this.userId = data._id;
       this.name = data.name;
