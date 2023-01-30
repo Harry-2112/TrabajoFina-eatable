@@ -26,6 +26,7 @@ export class TokenInterceptor implements HttpInterceptor {
     const reqClone = request.clone({
       headers,
     });
+
     return next.handle(reqClone);
   }
 }

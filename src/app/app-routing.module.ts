@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { CheckloginGuard } from './guards/checklogin.guard';
+import { CheckoutGuard } from './guards/checkout.guard';
 import { CardComponent } from './principal/card/card.component';
 import { CheckoutDatesComponent } from './principal/checkout-dates/checkout-dates.component';
 import { CheckoutComponent } from './principal/checkout/checkout.component';
@@ -19,7 +20,6 @@ import { CargandoComponent } from './share/cargando/cargando.component';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'cargando', component: CargandoComponent },
   { path: 'register', component: RegisterComponent },
   {
     path: 'principal',
@@ -41,6 +41,7 @@ const routes: Routes = [
       {
         path: 'checkout',
         component: CheckoutComponent,
+        canActivate: [CheckoutGuard],
         children: [
           { path: '', component: CheckoutDatesComponent },
           { path: 'checkoutUpdate', component: UpdateCheckoutComponent },

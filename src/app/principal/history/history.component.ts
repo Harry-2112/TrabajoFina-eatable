@@ -13,6 +13,7 @@ export class HistoryComponent implements OnInit {
   userHistory: any = [];
   userId = localStorage.getItem('id');
   ngOnInit(): void {
+    localStorage.setItem('check', 'false');
     if (localStorage.getItem('reload') == 'false') {
       location.reload();
       localStorage.setItem('reload', 'true');

@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   borde = '';
   numeroCarrito = 0;
   ngOnInit(): void {
+    localStorage.setItem('check', 'false');
     //carrito
     let carrito: any = localStorage.getItem('carrito');
     if (carrito !== null) {

@@ -92,6 +92,7 @@ export class CardComponent implements OnInit {
       items: items,
       total: this.total,
     };
+    localStorage.setItem('check', 'true');
     localStorage.setItem('pedido', JSON.stringify(check));
     this.router.navigate(['principal/checkout']);
   }

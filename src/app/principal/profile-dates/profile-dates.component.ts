@@ -27,6 +27,6 @@ export class ProfileDatesComponent implements OnInit {
     });
   }
   logoup() {
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 }
