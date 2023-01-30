@@ -9,14 +9,6 @@
   height: 100%;
 }
 
-.card {
-  border-radius: 25px;
-}
-
-.total {
-  display: flex;
-  justify-content: flex-end;
-}
 
 .buton {
   display: flex;
@@ -71,6 +63,9 @@ li span {
 }
 
 .total {
+  position: relative;
+  left: 30%;
+  top: 40px;
   color: #FA4A0C;
   font-weight: 700;
 }
@@ -80,4 +75,16 @@ li span {
   height: 500px;
   overflow: scroll;
   scroll-behavior: smooth;
+}
+
+/* Acordion */
+.accordion-button:not(.collapsed) {
+  color: initial;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  border-color: #fff;
+  box-shadow: none;
 }

@@ -16,40 +16,43 @@
     </div>
   </div>
 
-  <div class="principal">
-    <div class="card mt-4 px-4 pt-4" *ngFor="let item of userHistory">
-      <div class="date">
-        <div class="fecha">
-          {{item.data | date:'EEE, MMM d, y'}}
+  <div class="accordion principal mt-4" *ngIf="userHistory.length!==0">
+    <div class="accordion-item my-3" *ngFor="let item of userHistory">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true">
+          <div class="date">
+            <div class="fecha">
+              {{item.data | date:'EEE, MMM d, y'}}
+            </div>
+            <div class="cantidad">
+              {{item.items.length}} items
+            </div>
+          </div>
+          <div class="total">
+            {{item.total | currency}}
+          </div>
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <div class="orden">
+            <h2>Order</h2>
+            <ul>
+              <li *ngFor="let product of item.items">{{product.quantity}} - {{product.name}} <span>{{product.price |
+                  currency}}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="delivery">
+            <h2>Delivery</h2>
+            {{item.delivery_address}}
+          </div>
         </div>
-        <div class="cantidad">
-          {{item.items.length}} items
-        </div>
-      </div>
-      <div class="total">
-        {{item.total | currency}}
-      </div>
-      <div class="aparecer" *ngIf="ocultar">
-        <div class="orden">
-          <h2>Order</h2>
-          <ul>
-            <li *ngFor="let product of item.items">{{product.quantity}} - {{product.name}} <span>{{product.price |
-                currency}}</span>
-            </li>
-          </ul>
-        </div>
-        <div class="delivery">
-          <h2>Delivery</h2>
-          {{item.delivery_address}}
-        </div>
-      </div>
-      <div class="buton">
-        <button class="btn" (click)="mostrar()" *ngIf="ocultar==false"><i class="fa fa-angle-down"
-            aria-hidden="true"></i></button>
-        <button class="btn" (click)="mostrar()" *ngIf="ocultar"><i class="fa fa-angle-up"
-            aria-hidden="true"></i></button>
       </div>
     </div>
+
   </div>
 
 </div>
